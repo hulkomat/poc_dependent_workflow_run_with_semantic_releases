@@ -6,9 +6,7 @@ on:
         workflows: 
           - learn-github-actions
         types:
-            - completed
-
-            
+            - completed       
 
 jobs:
     semantic-release:
