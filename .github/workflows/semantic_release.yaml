@@ -8,6 +8,8 @@ on:
         types:
             - completed
 
+            
+
 jobs:
     semantic-release:
         name: Create Release
