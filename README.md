@@ -1,7 +1,11 @@
-# poc_dependent_workflow_run
+# PoC Dependent workflow usage for semantic releases
 This repository demonstrates how to run multiple dependent workflows in a project.
 
 The example workflows trigger on a push to the main branch. If a commit follows the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format and updates the version, it creates a release after the [GitHub Actions demo workflow](https://docs.github.com/en/actions/writing-workflows/quickstart#creating-your-first-workflow) completes successfully.
+
+## Workflow Behavior
+
+The semantic release workflow is configured to run only on the `main` branch. This ensures that releases are created only from the main line of development, avoiding unnecessary releases from feature branches or other non-main branches. Running the release workflow on other branches would be redundant and could lead to inconsistent versioning.
 
 ## Try it yourself
 You can test this by pushing a commit to the main branch with a conventional commit message:
