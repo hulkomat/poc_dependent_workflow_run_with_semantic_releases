@@ -1,15 +1,31 @@
 # poc_dependent_workflow_run
-This repository shows how a project can run multiple workflows depending on each other
+This repository demonstrates how to run multiple dependent workflows in a project.
 
-The example workflows run push to main and if a [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) is merged and the version upgrades it creates a release after the [github actions demo workflow](https://docs.github.com/en/actions/writing-workflows/quickstart#creating-your-first-workflow) succeeds.
+The example workflows trigger on a push to the main branch. If a commit follows the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format and updates the version, it creates a release after the [GitHub Actions demo workflow](https://docs.github.com/en/actions/writing-workflows/quickstart#creating-your-first-workflow) completes successfully.
 
-## test by your own
-You can test this behavior by pushing a commit to main with a conventional commit message:
+## Try it yourself
+You can test this by pushing a commit to the main branch with a conventional commit message:
 
-* feat:   to update the minor version (e.g. 1.2.3 -> 1.3.0)
-* fix:    to update the fix version (e.g. 1.2.3 -> 1.2.4)
-* feat!:  to update the major version (e.g. 1.2.3 -> 2.0.0)
-* chore:  nothing to update (e.g. 1.2.3 -> 1.2.3)
+```
+| Commit Type | Description                            | Version Update Example |
+|-------------|----------------------------------------|------------------------|
+| `feat:`     | New feature                            | 1.2.3 -> 1.3.0         |
+| `fix:`      | Bug fix                                | 1.2.3 -> 1.2.4         |
+| `feat!:`    | Breaking change                        | 1.2.3 -> 2.0.0         |
+| `chore:`    | Maintenance tasks                      | 1.2.3 -> 1.2.3         |
+| `docs:`     | Documentation changes                  | 1.2.3 -> 1.2.3         |
+| `style:`    | Code style changes (formatting, etc.)  | 1.2.3 -> 1.2.3         |
+| `refactor:` | Code refactoring without changing behavior | 1.2.3 -> 1.2.3     |
+| `perf:`     | Performance improvements               | 1.2.3 -> 1.2.3         |
+| `test:`     | Adding or updating tests               | 1.2.3 -> 1.2.3         |
+| `build:`    | Changes to build process or dependencies | 1.2.3 -> 1.2.3       |
+| `ci:`       | Changes to CI configuration files and scripts | 1.2.3 -> 1.2.3   |
+| `revert:`   | Reverts a previous commit              | 1.2.3 -> 1.2.3         |
+```
 
-Keep in mind that a `feat` is something that changes the behavior of you application.
-`feat!` is a breaking change (sometimes not backwards compatible!). 
+
+Remember:
+- `feat:` indicates a new feature that changes the application's behavior.
+- `feat!:` indicates a breaking change that might not be backward compatible.
+
+Conventional commits help in automating the versioning and release process.
