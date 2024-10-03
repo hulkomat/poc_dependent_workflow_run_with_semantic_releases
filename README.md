@@ -6,7 +6,6 @@ The example workflows trigger on a push to the main branch. If a commit follows 
 ## Try it yourself
 You can test this by pushing a commit to the main branch with a conventional commit message:
 
-```
 | Commit Type | Description                            | Version Update Example |
 |-------------|----------------------------------------|------------------------|
 | `feat:`     | New feature                            | 1.2.3 -> 1.3.0         |
@@ -21,7 +20,6 @@ You can test this by pushing a commit to the main branch with a conventional com
 | `build:`    | Changes to build process or dependencies | 1.2.3 -> 1.2.3       |
 | `ci:`       | Changes to CI configuration files and scripts | 1.2.3 -> 1.2.3   |
 | `revert:`   | Reverts a previous commit              | 1.2.3 -> 1.2.3         |
-```
 
 
 Remember:
