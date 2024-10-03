@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is (maybe) creating new version  🚀
 on:
     workflow_run:
         workflows: 
-          - learn-github-actions
+          - GitHub Actions Demo
         types:
             - completed     
         branches:
